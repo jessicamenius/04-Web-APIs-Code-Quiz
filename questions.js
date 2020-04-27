@@ -1,31 +1,3 @@
-
-// remove instructions 
-
-// countdown timer from 100 sections
-
-window.timer = 100;
-
-var start = document.getElementById("start");
-start.addEventListener("click", function () {
-    displayTimer();
-    displayQuestion();
-    $("#instructions").hide
-
-  start.parentNode.removeChild(start);
-});
-
-function displayTimer() {
-  window.createTimer = setInterval(function () {
-    window.timer -= 1;
-    document.getElementById("timer").innerHTML =
-      "Time Remaining: " + window.timer;
-
-    if (window.timer === 0) {
-      endQuiz();
-    }
-  }, 1000);
-}
-
 // create an array of questions with choices and the answer
 // each group in the array has 3 keys and 3 variables
 
@@ -88,7 +60,7 @@ var questions = [
   },
 
   {
-    title: "Which ckty is the Gateway to the West?",
+    title: "Which city is the Gateway to the West?",
     choices: [
       "Independence, MO",
       "Kansas City, KS",
@@ -109,104 +81,9 @@ var currentQuestion = 0;
 window.score = 0;
 
 function displayQuestion() {
-  document.getElementById("questions").innerHTML =
-    questions[currentQuestion].title;
-  for (var i = 0; i < questions[currentQuestion].choices.length; i++) {
-    var button = document.createElement("button");
-    button.type = "button";
-    button.value = i;
-    button.innerHTML = questions[currentQuestion].choices[i];
-    button.addEventListener("click", function (event) {
-      var buttonValue = event.target.value;
-
-      if (buttonValue == questions[currentQuestion].answer) {
-        // the answer is correct
-        // add to their score here
-        // show alert correct
-        window.score += 1;
-        showAlert("Correct!", "primary");
-      } else {
-        // the answer is wrong
-        //remove 10 seconds from counter
-        // show alert incorrect
-        window.timer -= 10;
-        showAlert("Incorrect", "danger");
-      }
-
-      // move onto next question
-      document.getElementById("answers").innerHTML = "";
-
-      // last question
-      if (currentQuestion === questions.length - 1) {
-        endQuiz();
-      } else {
-        currentQuestion += 1;
-        displayQuestion();
-      }
-    });
-    document.getElementById("answers").append(button);
-  }
-
-  function showAlert(str, type) {
-    $("#alert").show();
-    $("#alert").attr("class", `alert alert-${type}`);
-    $("#alert").text(str);
-    window.setTimeout(function () {
-      $("#alert").hide();
-    }, 2000);
-}
-
-// finish off the quiz
-function endQuiz() {
-  // clear the question
-  // save the score in localStorage
-  clearInterval(window.createTimer);
-}
-
-//display questions on page
-
-var currentQuestion = 0;
-window.score = 0;
-
-function displayQuestion() {
   document.getElementById("question").innerHTML =
     questions[currentQuestion].title;
-  for (var i = 0; i < questions[currentQuestion].choices.length; i++) {
-    var button = document.createElement("button");
-    button.type = "button";
-    button.value = i;
-    button.innerHTML = questions[currentQuestion].choices[i];
-    button.addEventListener("click", function (event) {
-      var buttonValue = event.target.value;
-
-      if (buttonValue == questions[currentQuestion].answer) {
-        // the answer is correct
-        // add to their score here
-        window.score += 1;
-        document.getElementById("score").innerHTML = "Score: " + window.score;
-      } else {
-        // the answer is wrong
-        window.timer -= 10;
-      }
-
-      // move onto next question
-      document.getElementById("answers").innerHTML = "";
-
-      // last question
-      if (currentQuestion === questions.length - 1) {
-        endQuiz();
-      } else {
-        currentQuestion += 1;
-        displayQuestion();
-      }
-    });
-    document.getElementById("answers").append(button);
-  }
-}
-
-function displayScore() {
-  document.getElementById("score").innerHTML = score;
-  for (var i = 0; i < scorelength; i++) {
+  for (var i = 0; i < questions[currentQuestion].choices.length; i += 1) {
     var button = document.createElement("button");
     button.type = "button";
     button.value = i;

@@ -20,7 +20,7 @@ function handleEndQuiz() {
     listItem.innerHTML = existingScores[i];
     document.getElementById("score").append(listItem);
   }
-  window.timer = 90;
+  window.timer = 100;
   currentQuestion = 0;
   var startAgain = document.createElement("button");
   startAgain.setAttribute("id", "start-again");
