@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Attempt Number 1 Million</title>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <p id="score">Score:</p>
+      <p id="timer">Time Remaining:</p>
+    </nav>
+
+    <div class="jumbotron">
+      <h1>Coding Quiz</h1>
+      <h3>Test your knowledge of JavaScript!</h3>
+    </div>
+
+    <!-- <div class="card" id="instructions">
+      <div class="card-body">
+        <p>
+          How much do you know about JavaScript? <br />Test your knowledge by
+          answering the following quesitons.
+        </p>
+        <p>
+          This is a 10-question 2 minute timed quiz. <br />For every incorrect
+          answer 10 seconds will be removed from the clock.
+        </p>
+        <p>Click the button below to begin.</p>
+        </p>
+      </div>
+    </div> -->
+
+    <div class="center">
+      <button type="button" id="start" class="btn btn-primary">
+        Start Quiz
+      </button>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.0.slim.js"
+      integrity="sha256-sCexhaKpAfuqulKjtSY7V9H7QT0TCN90H+Y5NlmqOUE="
+      crossorigin="anonymous"
+    ></script>
+    <script src="questions.js"></script>
+    <script src="score.js"></script>
+    <script src="instructions.js"></script>
+    <script src="highscores.js"></script>
+  </body>
+</html>

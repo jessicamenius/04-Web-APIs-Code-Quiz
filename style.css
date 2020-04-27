@@ -1,0 +1,26 @@
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+  background-color: #f7df1e;
+  color: #323330;
+}
+.jumbotron {
+  background-color: #f7df1e;
+  color: #323330;
+  text-align: center;
+}
+
+.card {
+  border: none;
+  text-align: center;
+  padding-top: 30px;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
