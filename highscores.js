@@ -1,15 +1,36 @@
-window.score = 0;
-var start = document.getElementById("start");
-var answer = [true, false];
+// tally score
+// enter initials
+// list highscore
 
-start.addEventListener("click", function () {
-  displayTimer();
-  displayQuestion();
-  displayScore();
-  start.parentNode.removeChild(start);
-});
+function handleEndQuiz() {
+  var existingScores = JSON.parse(localStorage.getItem("scores"));
+  if (existingScores === null) {
+    existingScores = [];
+  }
+  existingScores.push(window.score);
+  document.getElementById("question").innerHTML = "";
+  document.getElementById("score").innerHTML = window.score;
+  document.getElementById("timer").innerHTML = "";
+  window.score = 0;
+  localStorage.setItem("scores", JSON.stringify(existingScores));
+  // list the existing scores in html
+  for (var i = 0; i < existingScores.length; i++) {
+    // display the scores on the page using
+    var listItem = document.createElement("li");
+    listItem.innerHTML = existingScores[i];
+    document.getElementById("score").append(listItem);
+  }
+  window.timer = 90;
+  currentQuestion = 0;
+  var startAgain = document.createElement("button");
+  startAgain.setAttribute("id", "start-again");
+  startAgain.innerHTML = "Start Again";
 
-function displayScore() {
-  if (answer == true) window++;
-  document.getElementById("score").innerHTML = "Score: " + window.score;
+  startAgain.addEventListener("click", function () {
+    displayTimer();
+    displayQuestion();
+    startAgain.parentNode.removeChild(startAgain);
+    document.getElementById("score").innerHTML = "";
+  });
+  document.querySelector("#prompt_display").appendChild(startAgain);
 }

@@ -1,4 +1,4 @@
-window.timer = 120;
+window.timer = 100;
 var start = document.getElementById("start");
 
 start.addEventListener("click", function () {
@@ -11,8 +11,7 @@ function displayTimer() {
   window.createTimer = setInterval(function () {
     window.timer -= 1;
     document.getElementById("timer").innerHTML =
-      "Time Remaining: " + window.timer;
-
+      "Time Remaning: " + window.timer;
     if (window.timer === 0) {
       endQuiz();
     }

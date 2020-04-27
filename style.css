@@ -4,22 +4,7 @@ body {
 }
 
 .nav {
-  background-color: #f7df1e;
-  color: #323330;
   text-align: right;
-}
-
-.nav-link {
-  text-align: left;
-}
-
-.flex-row {
-  text-align: right;
-}
-.jumbotron {
-  background-color: #f7df1e;
-  color: #323330;
-  text-align: center;
 }
 
 .card {
@@ -32,8 +17,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 200px;
-  margin-top: 50 px;
 }
 
 section {
