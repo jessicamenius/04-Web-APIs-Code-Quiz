@@ -122,7 +122,7 @@ function endQuiz() {
   // save the score in localStorage
   clearInterval(window.createTimer);
   document.getElementById("question").innerHTML = "";
-  // document.getElementById("alert").innerHTML = handleEndQuiz();
+  document.getElementById("alert").innerHTML = handleEndQuiz();
 }
 function handleEndQuiz() {
   var existingScores = JSON.parse(localStorage.getItem("scores"));
@@ -138,12 +138,12 @@ function handleEndQuiz() {
 
   // list the existing scores in html
 
-  // for (var i = 0; i < existingScores.length; i++) {
-  //   // display the scores on the page using
-  //   var listItem = document.createElement("li");
-  //   listItem.innerHTML = existingScores[i];
-  //   document.getElementById("score").append(listItem);
-  // }
+  for (var i = 0; i < existingScores.length; i++) {
+    // display the scores on the page using
+    var listItem = document.createElement("li");
+    listItem.innerHTML = existingScores[i];
+    document.getElementById("score").append(listItem);
+  }
   // window.timer = 100;
   // currentQuestion = 0;
   // var startAgain = document.createElement("button");
@@ -157,4 +157,4 @@ function handleEndQuiz() {
   //   document.getElementById("score").innerHTML = "";
   // });
   // document.querySelector("#prompt_display").appendChild(startAgain);
-}
+  // }
