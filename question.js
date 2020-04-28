@@ -96,11 +96,9 @@ function displayQuestion() {
         // add to their score here
         window.score += 1;
         document.getElementById("score").innerHTML = "Score: " + window.score;
-        alert("Correct");
       } else {
         // the answer is wrong
         window.timer -= 10;
-        showAlert("Incorrect", "danger");
       }
 
       // move onto next question
