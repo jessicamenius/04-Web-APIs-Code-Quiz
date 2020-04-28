@@ -156,5 +156,5 @@ function handleEndQuiz() {
   //   startAgain.parentNode.removeChild(startAgain);
   //   document.getElementById("score").innerHTML = "";
   // });
+  
   // document.querySelector("#prompt_display").appendChild(startAgain);
-  // }
