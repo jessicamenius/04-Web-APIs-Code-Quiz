@@ -24,11 +24,20 @@
       <h3 class="center">Test your knowledge of the World!</h3>
     </div>
 
-    <div class="card text-center">
-      <div class="card-body" id="prompt_display">
-        <div id="question"></div>
-        <div id="answers"></div>
-        <p class="card-text"></p>
+    <div class="center">
+      <button id="start" type="submit" class="btn bg-primary text-light">
+        Start Quiz
+      </button>
+    </div>
+
+    <div id="quiz">
+      <div class="card text-center">
+        <div class="card-body" id="prompt_display">
+          <div id="question"></div>
+          <div id="answers"></div>
+          <p class="card-text"></p>
+          <div id="alert"></div>
+        </div>
       </div>
     </div>
 
@@ -37,8 +46,6 @@
         Start Quiz
       </button>
     </div>
-
-    <div id="alert"></div>
 
     <script
       src="https://code.jquery.com/jquery-3.5.0.slim.js"
