@@ -9,45 +9,45 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
-    <title>homework_04.2</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Coding Quiz</title>
   </head>
 
   <body>
-    <ul class="nav flex-column bg-primary text-light">
-      <li class="nav-item" id="timer">Timer:</li>
-      <li class="nav-item" id="score">Score:</li>
-    </ul>
-    <div class="jumbotron bg-primary text-light rounded-0">
-      <h1 class="center">World Quiz</h1>
-      <h3 class="center">Test your knowledge of the World!</h3>
-    </div>
+    <div class="scores"><a href="highscores.html">View High Scores</a></div>
 
-    <div class="center">
-      <button id="start" type="submit" class="btn bg-primary text-light">
-        Start Quiz
-      </button>
-    </div>
+    <div class="timer">Time: <span id="time">0</span></div>
 
-    <div id="quiz" class="center">
-      <div class="card text-center">
-        <div class="card-body" id="prompt_display">
-        <div id="question"></div>
-        <br>
-        <ul id="answers" class="list-group">
-        </ul>
-        <p class="card-text"></p>
-        <div id="alert"></div>
+    <div class="wrapper">
+      <div id="start-screen" class="start">
+        <h1>Coding Quiz Challenge</h1>
+        <h3>Are you up for the challenge?</h3>
+        <p>
+          Answer the following code-related questions within the given time
+          limit. Incorrect answers will penalize your score and reduce your time
+          by ten seconds!
+        </p>
+        <button id="start">Let's get started!</button>
       </div>
+
+      <div id="questions" class="hide">
+        <h2 id="question-title"></h2>
+        <div id="choices" class="choices"></div>
+      </div>
+
+      <div id="end-screen" class="hide">
+        <h2>All done!</h2>
+        <p>Your final score is <span id="final-score"></span>.</p>
+        <p>
+          Enter initials: <input type="text" id="initials" max="3" />
+          <button id="submit">Submit</button>
+        </p>
+      </div>
+
+      <div id="feedback" class="feedback hide"></div>
     </div>
 
-    <script
-      src="https://code.jquery.com/jquery-3.5.0.slim.js"
-      integrity="sha256-sCexhaKpAfuqulKjtSY7V9H7QT0TCN90H+Y5NlmqOUE="
-      crossorigin="anonymous"
-    ></script>
-    <!-- <script src="timer.js"></script>  -->
-    <script src="questions.js"></script>
-    <!-- <script src="score.js"></script> -->
+    <script src="./assets/js/questions.js"></script>
+    <script src="./assets/js/quizLogic.js"></script>
   </body>
 </html>
